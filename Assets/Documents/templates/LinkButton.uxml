@@ -1,0 +1,3 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="Text" style="width: 269px; background-color: rgba(188, 188, 188, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0); -unity-text-outline-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); font-size: 20px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+</ui:UXML>

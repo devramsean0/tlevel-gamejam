@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour
 {
 
-    public GameObject playerPaddle;
+    public GameObject playerCore;
     void Start()
     {
         
@@ -12,6 +12,6 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = playerPaddle.transform.position + new Vector3(0, 10, 0);
+        transform.position = playerCore.transform.position + new Vector3(0, 10, 0);
     }
 }

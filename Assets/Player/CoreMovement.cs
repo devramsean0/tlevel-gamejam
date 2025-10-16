@@ -3,7 +3,7 @@ using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PaddleMovement : MonoBehaviour
+public class CoreMovement : MonoBehaviour
 {
     InputAction moveAction;
     InputAction turnAction;

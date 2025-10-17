@@ -7,7 +7,9 @@ public class CorePaddles : MonoBehaviour
     public List<GameObject> paddles;
     void Start()
     {
-        GameObject newPaddle = Instantiate(paddlePrefab, transform);
+        GameObject newPaddle = Instantiate(paddlePrefab);
+        newPaddle.transform.position = transform.position + transform.forward * 2f;
+        newPaddle.GetComponent<PaddleMain>().rotationOffset = transform.rotation.y;
         paddles.Add(newPaddle);
     }
 
@@ -16,8 +18,8 @@ public class CorePaddles : MonoBehaviour
     {
         foreach (GameObject paddle in paddles)
         {
-            paddle.transform.position = transform.position + transform.forward * 2;
-            paddle.transform.rotation = transform.rotation;
+            paddle.GetComponent<PaddleMain>().intendedLocation = transform.position + transform.forward * 2f;
+            paddle.GetComponent<PaddleMain>().rotationOffset = transform.rotation.eulerAngles.y;
         }
     }
 }

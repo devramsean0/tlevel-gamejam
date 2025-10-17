@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 892817321851159496}
   - component: {fileID: 443080537030561254}
   - component: {fileID: 3678467271806521492}
+  - component: {fileID: 4109030884451266051}
   m_Layer: 0
   m_Name: EnemyPaddle
   m_TagString: Untagged
@@ -111,3 +112,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4109030884451266051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390444790276755005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd64827c92d843041ae4140d86696195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShooting
+  ballPrefab: {fileID: 9119713253800311501, guid: 5d529454d03d0d640b0fee1e83b64dfd, type: 3}
+  shootingInterval: 4

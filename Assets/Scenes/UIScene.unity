@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   mainMenu: {fileID: 1554663660}
+  settingsMenu: {fileID: 0}
 --- !u!1 &1928902215
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   mainMenu: {fileID: 1554663660}
+  settingsMenu: {fileID: 0}
   pauseMenu: {fileID: 1928902216}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

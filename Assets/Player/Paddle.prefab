@@ -99,7 +99,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8432651536942597849}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9a232b87ee474ef44abb061b63347659, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -152,5 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539f33eedbd0d72458911796398f6286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaddleMain
+  playerCore: {fileID: 0}
   rotationOffset: 0
   intendedLocation: {x: 0, y: 0, z: 0}

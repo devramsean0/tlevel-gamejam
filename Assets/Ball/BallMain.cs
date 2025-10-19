@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BallMain : MonoBehaviour
 {
     Rigidbody rb;
@@ -12,11 +13,5 @@ public class BallMain : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Vector3 direction = Vector3.Reflect(rb.linearVelocity.normalized, collision.contacts[0].normal);
-        rb.linearVelocity = direction * rb.linearVelocity.magnitude;
     }
 }

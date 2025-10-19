@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8319839367410602095}
+  - component: {fileID: 8743698623041934911}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -65,6 +66,20 @@ Transform:
   - {fileID: 1290931411504173868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8743698623041934911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2216780723266289807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f247097baad2aa947a31ac86c0041e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 10
+  currentHealth: 0
 --- !u!1 &4153047481937845591
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,9 +95,10 @@ GameObject:
   - component: {fileID: 2683969066902118348}
   - component: {fileID: 8120912930712643842}
   - component: {fileID: 2534250177703910755}
+  - component: {fileID: 5307294160763845138}
   m_Layer: 0
   m_Name: Core
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b319149e3734cb47808e7377599f412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoreMovement
-  speed: 10
+  speed: 500
 --- !u!114 &2534250177703910755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +249,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CorePaddles
   paddlePrefab: {fileID: 8432651536942597849, guid: 1c2837df927e5074e893b2fed141a6c5, type: 3}
   paddles: []
+--- !u!114 &5307294160763845138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153047481937845591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd0b02a3e8ced14dbb2c3c566a40fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoreMain
 --- !u!1 &4325487372734187767
 GameObject:
   m_ObjectHideFlags: 0

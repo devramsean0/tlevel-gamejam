@@ -4,6 +4,8 @@ using UnityEngine;
 public class BallMain : MonoBehaviour
 {
     Rigidbody rb;
+
+    public BallClass ballStats;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

@@ -15,6 +15,7 @@ public class CoreMovement : MonoBehaviour
     public float speed = 8f;
     void Start()
     {
+        Time.timeScale = 1f;
         moveAction = InputSystem.actions.FindAction("Move");
         turnAction = InputSystem.actions.FindAction("Turn");
         rb = GetComponent<Rigidbody>();

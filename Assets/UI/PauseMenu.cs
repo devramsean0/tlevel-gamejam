@@ -8,30 +8,32 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private UIDocument settingsMenu;
     [SerializeField] private UIDocument pauseMenu;
 
-    private void Awake()
+    /*private void Awake()
     {
         UIShared.setInvisible(pauseMenu);
         pauseMenu.rootVisualElement.Q<Button>("exit").clicked += UIShared.gameQuit;
         pauseMenu.rootVisualElement.Q<Button>("exit-main").clicked += doQuitToMain;
         pauseMenu.rootVisualElement.Q<Button>("settings").clicked += switchToSettings;
+    }*/
+
+    public void switchToGame()
+    {
+        SceneManager.UnloadSceneAsync("PauseMenu");
+        Time.timeScale = 1.0f;
     }
 
-    private void doQuitToMain()
+    public void doQuitToMain()
     {
-        UIShared.setInvisible(pauseMenu);
-        UIShared.setVisible(mainMenu);
+        SceneManager.LoadScene("MainMenu");
     }
 
-    private void switchToSettings()
+    public void ExitGame()
     {
-        UIShared.setInvisible(mainMenu);
-        UIShared.setVisible(settingsMenu);
+        Application.Quit();
     }
 
     public void switchToPause()
     {
-        SceneManager.LoadScene("MenuScene");
-        UIShared.setInvisible(mainMenu);
-        UIShared.setVisible(pauseMenu);
+        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
     }
 }

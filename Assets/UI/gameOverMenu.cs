@@ -16,6 +16,6 @@ public class GameOverMenu : MonoBehaviour
     private void switchToGame()
     {
         Debug.Log("Switching to Main Scene");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameplayScene");
     }
 }

@@ -995,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: waveHandler
@@ -1003,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 300980924}
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: currentHealth
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: playerUpgrades.sizeMult

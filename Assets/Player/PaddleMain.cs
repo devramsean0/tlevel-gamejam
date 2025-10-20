@@ -5,6 +5,7 @@ public class PaddleMain : MonoBehaviour
 {
     public GameObject playerCore;
     public float rotationOffset;
+    public float extraRotationOffset; //For multiple paddles, so that theyre as far apart as possible
     public Vector3 intendedLocation;
     Rigidbody rb;
     void Start()
@@ -30,7 +31,7 @@ public class PaddleMain : MonoBehaviour
     }
     void Update()
     {
-        intendedLocation = playerCore.transform.position + playerCore.transform.forward * 2f;
-        rotationOffset = playerCore.transform.rotation.eulerAngles.y;
+        intendedLocation = playerCore.transform.position + Quaternion.Euler(0, extraRotationOffset, 0) * playerCore.transform.forward * 2f;
+        rotationOffset = playerCore.transform.rotation.eulerAngles.y + extraRotationOffset;
     }
 }

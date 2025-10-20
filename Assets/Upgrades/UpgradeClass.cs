@@ -9,4 +9,5 @@ public class UpgradeClass : ScriptableObject
 {
     public string upgradeName;
     public string upgradeDesc;
+    public UpgradeRarity upgradeRarity;
 }

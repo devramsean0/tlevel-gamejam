@@ -35,6 +35,10 @@ public class AllUpgradeEffects : MonoBehaviour
         {
             PlayerSpeedUpgrade();
         }
+        else if (upgradeName == "Extra Paddle")
+        {
+            ExtraPaddleUpgrade();
+        }
         Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("PowerUpOptions");
     }
@@ -61,5 +65,10 @@ public class AllUpgradeEffects : MonoBehaviour
     void PlayerSpeedUpgrade()
     {
         player.transform.GetChild(1).GetChild(0).GetComponent<CoreMovement>().speed *= 1.1f;
+    }
+
+    void ExtraPaddleUpgrade()
+    {
+        player.transform.GetChild(1).GetChild(0).GetComponent<CorePaddles>().NewPaddle();
     }
 }

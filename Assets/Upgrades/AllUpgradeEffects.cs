@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class AllUpgradeEffects : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject player;
+    public void PoisonUpgrade()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player.GetComponent<PlayerStats>().playerUpgrades.poisonMult += 0.05f;
     }
 }

@@ -6,6 +6,8 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    public PlayerUpgrades playerUpgrades;
+
     public int currentWave;
 
     public GameObject waveHandler;

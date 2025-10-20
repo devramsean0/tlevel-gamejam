@@ -9,7 +9,10 @@ public class CoreMovement : MonoBehaviour
     InputAction turnAction;
     Rigidbody rb;
 
-    public float speed = 10f;
+    Vector2 movement;
+    float turnValue;
+
+    public float speed = 8f;
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
@@ -20,19 +23,13 @@ public class CoreMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Turn();
+        movement = moveAction.ReadValue<Vector2>();
+        turnValue = turnAction.ReadValue<float>();
     }
 
-    void Movement()
+    void FixedUpdate()
     {
-        Vector2 movement = moveAction.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector3(movement.x, 0, movement.y) * speed;
-    }
-
-    void Turn()
-    {
-        float turnValue = turnAction.ReadValue<float>();
-        rb.angularVelocity = new Vector3(0, turnValue * speed, 0);
+        rb.linearVelocity = speed * Time.fixedDeltaTime * new Vector3(movement.x, 0, movement.y);
+        rb.angularVelocity = new Vector3(0, turnValue * speed, 0) * Time.fixedDeltaTime;
     }
 }

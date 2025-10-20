@@ -1,0 +1,23 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WaveClass
+{
+    public int enemyAmountThisWave;
+    public float timeBetweenEnemySpawn;
+    public int maxEnemyAtOnce;
+
+    public EnemyClass maxEnemyStats;
+
+    public WaveClass(int waveNum)
+    {
+        maxEnemyStats = new EnemyClass(1 + (waveNum / 10), 10f - (waveNum / 10));
+        maxEnemyAtOnce = 5 + waveNum;
+        enemyAmountThisWave = 10 + (waveNum * 2);
+        timeBetweenEnemySpawn = 5f - (waveNum / 10);
+        if (timeBetweenEnemySpawn < 0.1f)
+        {
+            timeBetweenEnemySpawn = 0.1f;
+        }
+    }
+}

@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     private void switchToGame()
     {
         Debug.Log("Switching to Main Scene");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameplayScene");
     }
     private void switchToSettings()
     {

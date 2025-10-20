@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
@@ -25,5 +26,12 @@ public class PauseMenu : MonoBehaviour
     {
         UIShared.setInvisible(mainMenu);
         UIShared.setVisible(settingsMenu);
+    }
+
+    public void switchToPause()
+    {
+        SceneManager.LoadScene("MenuScene");
+        UIShared.setInvisible(mainMenu);
+        UIShared.setVisible(pauseMenu);
     }
 }

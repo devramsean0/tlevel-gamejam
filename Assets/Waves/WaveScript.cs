@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveScript : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class WaveScript : MonoBehaviour
     {
         GameObject newEnemy = Instantiate(enemyPrefab, new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f)), Quaternion.identity);
         newEnemy.GetComponent<EnemyStats>().enemyInfo = new EnemyClass(
-            Random.Range(1, currWaveData.maxEnemyStats.maxHealth),
-            Random.Range(currWaveData.maxEnemyStats.timeBetweenBalls, 5)
+            (int)Random.Range(1, currWaveData.maxEnemyStats.maxHealth),
+            Random.Range(currWaveData.maxEnemyStats.timeBetweenBalls, 3),
+            currWaveData.maxEnemyStats.damageDealt
             );
         newEnemy.GetComponent<EnemyStats>().waveHandler = gameObject;
         currentEnemiesAlive.Add(newEnemy);
@@ -52,6 +54,12 @@ public class WaveScript : MonoBehaviour
 
     void NewWave()
     {
+        if (currentWaveNum > 0)
+        {
+            SceneManager.LoadScene("PowerUpOptions", LoadSceneMode.Additive);
+            Time.timeScale = 0;
+        }
+
         currentWaveNum += 1;
         timeUntilNextSpawn = 0;
         enemiesSpawnedThisWave = 0;

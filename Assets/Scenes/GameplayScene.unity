@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8120912930712643842, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: speed
       value: 400
@@ -988,6 +992,22 @@ PrefabInstance:
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: currentHealth
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
+      propertyPath: playerUpgrades.sizeMult
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
+      propertyPath: playerUpgrades.speedMult
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
+      propertyPath: playerUpgrades.damageMult
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
+      propertyPath: playerUpgrades.poisonMult
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

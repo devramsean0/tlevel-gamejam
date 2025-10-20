@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 576c11aa23a2d2a429f9e8dcd02d35fe, type: 3}
-  m_Name: Poison
+  m_Name: Damage
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeClass
-  upgradeName: Poison
-  upgradeDesc: Poison increases by 1.05x
+  upgradeName: Damage
+  upgradeDesc: Damage increases by 1.05x
   upgradeEffect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -4231057416245873988, guid: c5fe62b7d601be2459d1c1bbdc4a3d08, type: 3}
         m_TargetAssemblyTypeName: AllUpgradeEffects, Assembly-CSharp
-        m_MethodName: PoisonUpgrade
+        m_MethodName: DamageUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

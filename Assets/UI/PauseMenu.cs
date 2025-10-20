@@ -18,8 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     public void switchToGame()
     {
+        SceneManager.UnloadSceneAsync("PauseMenu");
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("GameplayScene");;
     }
 
     public void doQuitToMain()

@@ -4,9 +4,9 @@ using UnityEngine.UIElements;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private UIDocument mainMenu;
+    /*[SerializeField] private UIDocument mainMenu;
     [SerializeField] private UIDocument settingsMenu;
-    [SerializeField] private UIDocument pauseMenu;
+    [SerializeField] private UIDocument pauseMenu;*/
 
     /*private void Awake()
     {

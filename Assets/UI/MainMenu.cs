@@ -5,8 +5,8 @@ using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private UIDocument mainMenu;
-    [SerializeField] private UIDocument settingsMenu;
+    /*[SerializeField] private UIDocument mainMenu;
+    [SerializeField] private UIDocument settingsMenu;*/
 
     /*private void Awake()
     {

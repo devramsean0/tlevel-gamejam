@@ -14,8 +14,11 @@ public class SwitchToPause : MonoBehaviour
     void Update()
     {
         if (pause.WasPressedThisFrame()) {
-            Time.timeScale = 0f;
-            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+            if (Time.timeScale == 1f)
+            {
+                Time.timeScale = 0f;
+                SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+            }
         }
     }
 }

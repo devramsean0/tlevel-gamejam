@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        playerUpgrades = new(1, 1, 1, 1, 0, 0, 0);
     }
 
     // Update is called once per frame

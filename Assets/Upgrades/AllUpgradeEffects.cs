@@ -78,6 +78,7 @@ public class AllUpgradeEffects : MonoBehaviour
     
     void BallCloneUpgrade()
     {
+        player.GetComponent<PlayerStats>().playerUpgrades.ballCloneChance += 0.05f;
         player.GetComponent<PlayerStats>().playerUpgrades.ballCloneAmount += 1;
     }
 }

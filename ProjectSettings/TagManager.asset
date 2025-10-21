@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Core
   - GameplayStatsUI
+  - UpgradesAndStatsUI
   layers:
   - Default
   - TransparentFX

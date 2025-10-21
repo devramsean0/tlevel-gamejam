@@ -412,7 +412,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
   m_PrefabInstance: {fileID: 5207018445104529739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &644818917
+--- !u!114 &644818919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,21 +421,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 644818914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e774fd357d4b5ca479572ff4f2699c60, type: 3}
+  m_Script: {fileID: 11500000, guid: c80439a3b78a6d84986e03283c8d1df0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameplayToUI
---- !u!114 &644818918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644818914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a4ff31eb5e23243b5565fb63d33c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SwitchToPause
+  m_EditorClassIdentifier: Assembly-CSharp::ShowUpgradesDisplay
 --- !u!1 &704458464
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,21 +925,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1285497697563687605, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 9a232b87ee474ef44abb061b63347659, type: 2}
     - target: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8120912930712643842, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: speed
-      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8319839367410602095, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -994,43 +970,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       propertyPath: waveHandler
       value: 
       objectReference: {fileID: 300980924}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: currentHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: playerUpgrades.sizeMult
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: playerUpgrades.speedMult
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: playerUpgrades.damageMult
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743698623041934911, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      propertyPath: playerUpgrades.poisonMult
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 644818917}
-    - targetCorrespondingSourceObject: {fileID: 2216780723266289807, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 644818918}
+      addedObject: {fileID: 644818919}
   m_SourcePrefab: {fileID: 100100000, guid: 341110417977c6342ab3eaee4ab648b8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

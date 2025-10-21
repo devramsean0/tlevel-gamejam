@@ -30,7 +30,7 @@ public class CoreMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = speed * Time.fixedDeltaTime * new Vector3(movement.x, 0, movement.y);
+        rb.linearVelocity = speed * Time.fixedDeltaTime * transform.parent.parent.GetComponent<PlayerStats>().playerUpgrades.playerSpeedMult * new Vector3(movement.x, 0, movement.y);
         rb.angularVelocity = new Vector3(0, turnValue * speed, 0) * Time.fixedDeltaTime;
     }
 }

@@ -5,16 +5,6 @@ using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
-    /*[SerializeField] private UIDocument mainMenu;
-    [SerializeField] private UIDocument settingsMenu;*/
-
-    /*private void Awake()
-    {
-        UIShared.setVisible(mainMenu);
-        mainMenu.rootVisualElement.Q<Button>("play").clicked += switchToGame;
-        mainMenu.rootVisualElement.Q<Button>("exit").clicked += UIShared.gameQuit;
-        mainMenu.rootVisualElement.Q<Button>("settings").clicked += switchToSettings;
-    }*/
 
     public void switchToGame()
     {
@@ -27,9 +17,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    /*private void switchToSettings()
-    {
-        UIShared.setInvisible(mainMenu);
-        UIShared.setVisible(settingsMenu);
-    }*/
 }

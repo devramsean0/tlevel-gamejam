@@ -27,20 +27,23 @@ public class BallMain : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PaddleMain>() && !hasHitPaddle)
         {
+            //Applying basic stats
             ballStats.damage = player.GetComponent<PlayerStats>().playerUpgrades.damageMult;
             ballStats.speed = player.GetComponent<PlayerStats>().playerUpgrades.speedMult;
             ballStats.size = player.GetComponent<PlayerStats>().playerUpgrades.sizeMult * 0.3f;
             ballStats.poisonDamage = player.GetComponent<PlayerStats>().playerUpgrades.poisonMult * ballStats.damage;
 
+            //Applying physics and flags
+            hasHitPaddle = true;
+            transform.localScale = new Vector3(ballStats.size, ballStats.size, ballStats.size);
+            rb.linearVelocity *= ballStats.speed;
+
+
+            //Cloning balls
             for (int i = 0; i < player.GetComponent<PlayerStats>().playerUpgrades.ballCloneAmount; i++)
             {
                 GameObject newClone = Instantiate(gameObject, transform.position + (collision.transform.right * 0.1f * i), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y + (15 * i), transform.rotation.z)));
             }
-
-
-            hasHitPaddle = true;
-            transform.localScale = new Vector3(ballStats.size, ballStats.size, ballStats.size);
-            rb.linearVelocity *= ballStats.speed;
         }
     }
 }

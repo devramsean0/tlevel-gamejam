@@ -11,6 +11,7 @@ public class GameOverMenu : MonoBehaviour
         UIShared.setVisible(gameOverMenu);
         gameOverMenu.rootVisualElement.Q<Button>("play").clicked += switchToGame;
         gameOverMenu.rootVisualElement.Q<Button>("exit").clicked += UIShared.gameQuit;
+
     }
 
     private void switchToGame()

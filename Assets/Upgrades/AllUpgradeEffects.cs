@@ -39,6 +39,10 @@ public class AllUpgradeEffects : MonoBehaviour
         {
             ExtraPaddleUpgrade();
         }
+        else if (upgradeName == "Ball Clone")
+        {
+            BallCloneUpgrade();
+        }
         Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("PowerUpOptions");
     }
@@ -70,5 +74,10 @@ public class AllUpgradeEffects : MonoBehaviour
     void ExtraPaddleUpgrade()
     {
         player.transform.GetChild(1).GetChild(0).GetComponent<CorePaddles>().NewPaddle();
+    }
+    
+    void BallCloneUpgrade()
+    {
+        player.GetComponent<PlayerStats>().playerUpgrades.ballCloneAmount += 1;
     }
 }

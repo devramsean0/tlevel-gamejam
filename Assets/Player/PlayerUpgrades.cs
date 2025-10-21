@@ -15,5 +15,6 @@ public class PlayerUpgrades
         this.speedMult = speedMult;
         this.sizeMult = sizeMult;
         this.poisonMult = poisonMult;
+        this.ballCloneAmount = ballCloneAmount;
     }
 }

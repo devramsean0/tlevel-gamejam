@@ -11,7 +11,7 @@ public class WaveClass
 
     public WaveClass(int waveNum)
     {
-        maxEnemyStats = new EnemyClass(1 + (waveNum / 10), 10f - (waveNum / 10), 1 + waveNum/2);
+        maxEnemyStats = new EnemyClass(1 + ((waveNum ^ 2) / 10), 10f - ((waveNum ^ 2) / 10), 1 + (waveNum ^ 2)/2);
         maxEnemyAtOnce = 5 + waveNum;
         enemyAmountThisWave = 10 + (waveNum * 2);
         timeBetweenEnemySpawn = 3f - (waveNum / 30);

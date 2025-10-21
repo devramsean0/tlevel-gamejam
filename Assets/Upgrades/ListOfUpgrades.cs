@@ -45,10 +45,10 @@ public class ListOfUpgrades : MonoBehaviour
             if (rarityLevel > 99 && ballerUpgrades.Count > 0) {
                 DisplayPowerUpOption(i, ballerUpgrades);
             }
-            else if (rarityLevel > 90 && legendaryUpgrades.Count > 0) {
+            else if (rarityLevel > 95 && legendaryUpgrades.Count > 0) {
                 DisplayPowerUpOption(i, legendaryUpgrades);
             }
-            else if (rarityLevel > 75 && rareUpgrades.Count > 0) {
+            else if (rarityLevel > 85 && rareUpgrades.Count > 0) {
                 DisplayPowerUpOption(i, rareUpgrades);
             }
             else {

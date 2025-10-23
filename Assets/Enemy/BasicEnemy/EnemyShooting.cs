@@ -30,6 +30,6 @@ public class EnemyShooting : MonoBehaviour
     void Shoot()
     {
         GameObject newBall = Instantiate(ballPrefab, transform.position + transform.forward * 2, transform.rotation);
-        newBall.GetComponent<Rigidbody>().linearVelocity = transform.forward * Time.fixedDeltaTime * 1000f;
+        newBall.GetComponent<Rigidbody>().linearVelocity = 1000f * Time.fixedDeltaTime * transform.forward;
     }
 }

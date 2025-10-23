@@ -14,13 +14,18 @@ public class BallMain : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
-        ballStats = new BallClass(1, 1, 0.3f, 0);
+        ballStats = new BallClass(1, 1, 0.5f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    void FixedUpdate()
+    {
+        rb.linearVelocity = 1000f * ballStats.speed * Time.fixedDeltaTime * rb.linearVelocity.normalized;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -30,7 +35,7 @@ public class BallMain : MonoBehaviour
             //Applying basic stats
             ballStats.damage = player.GetComponent<PlayerStats>().playerUpgrades.damageMult;
             ballStats.speed = player.GetComponent<PlayerStats>().playerUpgrades.speedMult;
-            ballStats.size = player.GetComponent<PlayerStats>().playerUpgrades.sizeMult * 0.3f;
+            ballStats.size = player.GetComponent<PlayerStats>().playerUpgrades.sizeMult * 0.5f;
             ballStats.poisonDamage = player.GetComponent<PlayerStats>().playerUpgrades.poisonMult * ballStats.damage;
 
             //Applying physics and flags

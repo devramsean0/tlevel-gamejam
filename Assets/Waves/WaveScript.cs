@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class WaveScript : MonoBehaviour
 {
     public int currentWaveNum;
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabs = new();
     public GameObject ballPrefab;
 
     public WaveClass currWaveData;
@@ -39,13 +39,42 @@ public class WaveScript : MonoBehaviour
 
     void NewEnemy()
     {
-        GameObject newEnemy = Instantiate(enemyPrefab, new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f)), Quaternion.identity);
-        newEnemy.GetComponent<EnemyStats>().enemyInfo = new EnemyClass(
-            (int)Random.Range(1, currWaveData.maxEnemyStats.maxHealth),
-            Random.Range(currWaveData.maxEnemyStats.timeBetweenBalls, 3),
-            currWaveData.maxEnemyStats.damageDealt
-            );
-        newEnemy.GetComponent<EnemyStats>().waveHandler = gameObject;
+        int enemyChosen = Random.Range(0, (currentWaveNum / 5) + 2);
+        GameObject newEnemy = Instantiate(enemyPrefabs[enemyChosen], new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f)), Quaternion.identity);
+
+        //Enemy Stats
+        if (newEnemy.GetComponent<TripletPaddles>())
+        {
+            for (int i = 0; i < newEnemy.transform.childCount; i++)
+            {
+                newEnemy.transform.GetChild(i).GetComponent<EnemyStats>().enemyInfo = new EnemyClass(
+                    EnemyType.connected,
+                    (int)Random.Range(1, currWaveData.maxEnemyStats.maxHealth),
+                    Random.Range(currWaveData.maxEnemyStats.timeBetweenBalls, 3),
+                    currWaveData.maxEnemyStats.damageDealt
+                    );
+            }
+        }
+        else
+        {
+            newEnemy.GetComponent<EnemyStats>().enemyInfo = new EnemyClass(
+                EnemyType.single,
+                (int)Random.Range(1, currWaveData.maxEnemyStats.maxHealth),
+                Random.Range(currWaveData.maxEnemyStats.timeBetweenBalls, 3),
+                currWaveData.maxEnemyStats.damageDealt
+                );
+        }
+
+        //Assigning wave handler
+        if (newEnemy.GetComponent<TripletPaddles>())
+        {
+            newEnemy.GetComponent<TripletPaddles>().waveHandler = gameObject;
+        }
+        else
+        {
+            newEnemy.GetComponent<EnemyStats>().waveHandler = gameObject;
+        }
+        
         currentEnemiesAlive.Add(newEnemy);
         timeUntilNextSpawn = currWaveData.timeBetweenEnemySpawn;
         enemiesSpawnedThisWave += 1;

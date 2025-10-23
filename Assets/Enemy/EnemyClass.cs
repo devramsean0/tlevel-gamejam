@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public class EnemyClass
 {
+    public EnemyType enemyType;
     public float maxHealth;
     public float currentHealth;
 
@@ -14,8 +16,9 @@ public class EnemyClass
 
     public float damageDealt;
 
-    public EnemyClass(int maxHealth, float timeBetweenBalls, float damageDealt)
+    public EnemyClass(EnemyType enemyType, int maxHealth, float timeBetweenBalls, float damageDealt)
     {
+        this.enemyType = enemyType;
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
         this.timeBetweenBalls = timeBetweenBalls;

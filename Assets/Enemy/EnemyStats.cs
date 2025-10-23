@@ -26,8 +26,15 @@ public class EnemyStats : MonoBehaviour
         }
         if (enemyInfo.currentHealth <= 0)
         {
-            waveHandler.GetComponent<WaveScript>().currentEnemiesAlive.Remove(gameObject);
-            Destroy(gameObject);
+            if (enemyInfo.enemyType == EnemyType.single)
+            {
+                waveHandler.GetComponent<WaveScript>().currentEnemiesAlive.Remove(gameObject);
+                Destroy(gameObject);
+            }
+            else if (enemyInfo.enemyType == EnemyType.connected)
+            {
+                gameObject.GetComponent<IndividualTriplet>().TripletAlive(false);
+            }
         }
     }
 

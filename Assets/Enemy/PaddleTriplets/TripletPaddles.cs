@@ -13,13 +13,13 @@ public class TripletPaddles : MonoBehaviour
     public GameObject waveHandler;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        tripletsCentre = tripletPaddles[0].transform.position + tripletPaddles[1].transform.position + tripletPaddles[2].transform.position;
+        tripletsCentre = (tripletPaddles[0].transform.position + tripletPaddles[1].transform.position + tripletPaddles[2].transform.position)/3f;
 
         paddlesStillAlive = false;
         foreach (GameObject paddle in tripletPaddles)

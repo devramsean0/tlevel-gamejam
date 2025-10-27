@@ -50,7 +50,11 @@ public class EnemyStats : MonoBehaviour
             }
             collision.gameObject.GetComponent<BallMain>().dueToDie = true;
             collision.gameObject.GetComponent<Collider>().enabled = false;
-            collision.gameObject.GetComponentInChildren<Renderer>().enabled = false;
+
+            foreach(Renderer partRender in collision.gameObject.GetComponentsInChildren<Renderer>())
+            {
+                partRender.enabled = false;
+            }
         }
     }
 }

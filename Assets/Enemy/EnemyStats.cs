@@ -48,7 +48,9 @@ public class EnemyStats : MonoBehaviour
                 enemyInfo.currentPoisonDamage = collision.gameObject.GetComponent<BallMain>().ballStats.poisonDamage;
                 enemyInfo.currentPoisonTime = 3f;
             }
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<BallMain>().dueToDie = true;
+            collision.gameObject.GetComponent<Collider>().enabled = false;
+            collision.gameObject.GetComponentInChildren<Renderer>().enabled = false;
         }
     }
 }

@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallMain : MonoBehaviour
@@ -10,9 +11,15 @@ public class BallMain : MonoBehaviour
     public BallClass ballStats;
 
     public bool hasHitPaddle;
+
+    public bool dueToDie = false;
+
+
+    AudioSource ballSound;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ballSound = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
         ballStats = new BallClass(1, 1, 0.5f, 0);
     }
@@ -20,7 +27,10 @@ public class BallMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (dueToDie && !ballSound.isPlaying)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
@@ -30,6 +40,8 @@ public class BallMain : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        ballSound.Play();
+
         if (collision.gameObject.GetComponent<PaddleMain>() && !hasHitPaddle)
         {
             //Applying basic stats

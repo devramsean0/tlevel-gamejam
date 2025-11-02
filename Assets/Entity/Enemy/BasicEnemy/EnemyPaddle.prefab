@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 374855658269181696}
   - component: {fileID: 528931707859584971}
   - component: {fileID: 7370214988555701941}
+  - component: {fileID: 3823898222982621655}
   m_Layer: 0
   m_Name: EnemyPaddle
   m_TagString: Untagged
@@ -181,7 +182,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   enemyInfo:
+    enemyType: 0
     maxHealth: 0
     currentHealth: 0
+    currentPoisonDamage: 0
+    currentPoisonTime: 0
     timeBetweenBalls: 0
+    damageDealt: 0
   waveHandler: {fileID: 0}
+--- !u!114 &3823898222982621655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390444790276755005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b9576173141634397712ba4bd3256a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactFlash
+  impactFlashMaterial: {fileID: 2100000, guid: 26da98a51f089544eafc379cc2991004, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6868266520363552121}
   - component: {fileID: 7954277726598405141}
+  - component: {fileID: 6767895983057114366}
   m_Layer: 0
   m_Name: TripletPaddles
   m_TagString: Untagged
@@ -52,6 +53,20 @@ MonoBehaviour:
   - {fileID: 7481559055095522661}
   - {fileID: 6536923907926813285}
   tripletsCentre: {x: 0, y: 0, z: 0}
+  waveHandler: {fileID: 0}
+--- !u!114 &6767895983057114366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031071146686366875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b9576173141634397712ba4bd3256a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactFlash
+  impactFlashMaterial: {fileID: 2100000, guid: 26da98a51f089544eafc379cc2991004, type: 2}
 --- !u!1 &6536923907926813285
 GameObject:
   m_ObjectHideFlags: 0

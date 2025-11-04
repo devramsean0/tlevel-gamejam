@@ -14,7 +14,14 @@ public class EnemyClass
     public float currentPoisonTime;
     public float timeBetweenBalls;
 
+    public float timeUntilNextBalls;
+
     public float damageDealt;
+
+    public EnemyClass()
+    {
+        
+    }
 
     public EnemyClass(EnemyType enemyType, int maxHealth, float timeBetweenBalls, float damageDealt)
     {
@@ -23,5 +30,16 @@ public class EnemyClass
         currentHealth = maxHealth;
         this.timeBetweenBalls = timeBetweenBalls;
         this.damageDealt = damageDealt;
+    }
+
+    public bool CountdownToShot()
+    {
+        timeUntilNextBalls -= Time.deltaTime;
+        if (timeUntilNextBalls <= 0)
+        {
+            timeUntilNextBalls = timeBetweenBalls;
+            return true;
+        }
+        return false;
     }
 }

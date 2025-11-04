@@ -39,11 +39,22 @@ public class WaveScript : MonoBehaviour
 
     void NewEnemy()
     {
-        int enemyChosen = Random.Range(0, (currentWaveNum / 5) + 2);
+        int enemyChosen = Random.Range(0, (currentWaveNum / 5) + 3) % enemyPrefabs.Count;
         GameObject newEnemy = Instantiate(enemyPrefabs[enemyChosen], new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f)), Quaternion.identity);
 
         //Enemy Stats
-        if (newEnemy.GetComponent<TripletPaddles>())
+        if (newEnemy.GetComponent<TurretMain>())
+        {
+            newEnemy.GetComponent<TurretMain>().turretInfo = new TurretClass(
+            99999,
+            currentWaveNum * 4,
+            0.2f,
+            currWaveData.maxEnemyStats.damageDealt,
+            Random.Range(1, 5),
+            30f
+            );
+        }
+        else if (newEnemy.GetComponent<TripletPaddles>())
         {
             for (int i = 0; i < newEnemy.transform.childCount; i++)
             {
@@ -69,6 +80,10 @@ public class WaveScript : MonoBehaviour
         if (newEnemy.GetComponent<TripletPaddles>())
         {
             newEnemy.GetComponent<TripletPaddles>().waveHandler = gameObject;
+        }
+        else if (newEnemy.GetComponent<TurretMain>())
+        {
+            newEnemy.GetComponent<TurretMain>().waveHandler = gameObject;
         }
         else
         {

@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a888c5ad6ac699741b868dae3b89bc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  shouldLookAtPlayer: 1
 --- !u!114 &7370214988555701941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
     currentPoisonDamage: 0
     currentPoisonTime: 0
     timeBetweenBalls: 0
+    timeUntilNextBalls: 0
     damageDealt: 0
   waveHandler: {fileID: 0}
 --- !u!114 &3823898222982621655
@@ -203,3 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImpactFlash
   impactFlashMaterial: {fileID: 2100000, guid: 26da98a51f089544eafc379cc2991004, type: 2}
+  objectMaterialsList: []

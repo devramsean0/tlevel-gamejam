@@ -18,7 +18,7 @@ public class CoreMain : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<BallMain>())
         {
-            transform.parent.parent.GetComponent<PlayerStats>().currentHealth -= 1;
+            transform.parent.parent.GetComponent<PlayerStats>().currentHealth -= collision.gameObject.GetComponent<BallMain>().ballStats.damage;
             Destroy(collision.gameObject);
         }
     }

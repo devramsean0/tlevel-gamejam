@@ -4,12 +4,9 @@ public class EnemyShooting : MonoBehaviour
 {
     public GameObject ballPrefab;
 
-    public float shootingInterval = 4f;
-    float timeUntilNextShot = 4f;
-
     void Awake()
     {
-        timeUntilNextShot = shootingInterval;
+
     }
     void Start()
     {
@@ -19,17 +16,16 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeUntilNextShot -= Time.deltaTime;
-        if (timeUntilNextShot <= 0)
+        if(GetComponent<EnemyStats>().enemyInfo.CountdownToShot())
         {
             Shoot();
-            timeUntilNextShot = shootingInterval;
         }
     }
 
-    void Shoot()
+    public void Shoot(float angleFromEnemy = 0f)
     {
-        GameObject newBall = Instantiate(ballPrefab, transform.position + transform.forward * 2, transform.rotation);
+        GameObject newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 2f, transform.rotation);
         newBall.GetComponent<Rigidbody>().linearVelocity = 1000f * Time.fixedDeltaTime * transform.forward;
+        newBall.GetComponent<BallMain>().ballStats = new BallClass(GetComponent<EnemyStats>().enemyInfo);
     }
 }

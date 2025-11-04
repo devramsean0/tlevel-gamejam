@@ -12,18 +12,7 @@ public class EnemyStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyInfo.currentPoisonTime > 0)
-        {
-            int prevPoisTime = (int)enemyInfo.currentPoisonTime;
-            enemyInfo.currentPoisonTime -= Time.deltaTime;
-            if (prevPoisTime > (int)enemyInfo.currentPoisonTime)
-            {
-                enemyInfo.currentHealth -= enemyInfo.currentPoisonDamage;
-            }
-        }
-        else if (enemyInfo.currentPoisonDamage > 0) {
-            enemyInfo.currentPoisonDamage = 0;
-        }
+        Poison();
         if (enemyInfo.currentHealth <= 0)
         {
             if (enemyInfo.enemyType == EnemyType.single)
@@ -51,10 +40,26 @@ public class EnemyStats : MonoBehaviour
             collision.gameObject.GetComponent<BallMain>().dueToDie = true;
             collision.gameObject.GetComponent<Collider>().enabled = false;
 
-            foreach(Renderer partRender in collision.gameObject.GetComponentsInChildren<Renderer>())
+            foreach (Renderer partRender in collision.gameObject.GetComponentsInChildren<Renderer>())
             {
                 partRender.enabled = false;
             }
+        }
+    }
+    
+    void Poison()
+    {
+        if (enemyInfo.currentPoisonTime > 0)
+        {
+            int prevPoisTime = (int)enemyInfo.currentPoisonTime;
+            enemyInfo.currentPoisonTime -= Time.deltaTime;
+            if (prevPoisTime > (int)enemyInfo.currentPoisonTime)
+            {
+                enemyInfo.currentHealth -= enemyInfo.currentPoisonDamage;
+            }
+        }
+        else if (enemyInfo.currentPoisonDamage > 0) {
+            enemyInfo.currentPoisonDamage = 0;
         }
     }
 }

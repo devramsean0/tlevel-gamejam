@@ -1,16 +1,18 @@
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class TurretMain : MonoBehaviour
+public class TurretMain : EnemyStats
 {
     public GameObject ballPrefab;
     public TurretClass turretInfo;
 
-    public GameObject waveHandler;
+    public List<GameObject> turretsBalls;
+
     Rigidbody rb;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -23,7 +25,7 @@ public class TurretMain : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.angularVelocity = new Vector3(0, turretInfo.spinSpeed * Time.fixedDeltaTime, 0);
+        rb.angularVelocity = new Vector3(0, turretInfo.spinSpeed * Time.fixedDeltaTime * 10f, 0);
     }
     
     void ShootBalls()

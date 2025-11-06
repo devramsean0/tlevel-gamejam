@@ -21,7 +21,6 @@ public class BallMain : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         ballSound = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
-        ballStats = new BallClass(1, 1, 0.5f, 0);
     }
 
     // Update is called once per frame
@@ -41,6 +40,15 @@ public class BallMain : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         ballSound.Play();
+
+        if (ballStats.ballDurability > 0)
+        {
+            ballStats.ballDurability -= 1;
+        }
+        if (ballStats.ballDurability == 0)
+        {
+            Destroy(gameObject);
+        }
 
         if (collision.gameObject.GetComponent<PaddleMain>() && !hasHitPaddle)
         {

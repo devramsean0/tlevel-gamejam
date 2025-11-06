@@ -29,12 +29,13 @@ public class EnemyClass
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
         this.timeBetweenBalls = timeBetweenBalls;
+        timeUntilNextBalls = timeBetweenBalls;
         this.damageDealt = damageDealt;
     }
 
     public bool CountdownToShot()
     {
-        timeUntilNextBalls -= Time.deltaTime;
+        timeUntilNextBalls -= Time.deltaTime * Time.timeScale;
         if (timeUntilNextBalls <= 0)
         {
             timeUntilNextBalls = timeBetweenBalls;

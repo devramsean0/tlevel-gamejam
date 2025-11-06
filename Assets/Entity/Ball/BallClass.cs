@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class BallClass
 {
     public float damage;
@@ -5,7 +8,7 @@ public class BallClass
     public float size;
     public float poisonDamage;
 
-    public float ballDurability;
+    public int ballDurability = -1;
 
     public BallClass(float damage, float speed, float size, float poisonMult)
     {
@@ -21,5 +24,15 @@ public class BallClass
         speed = 1;
         size = 1;
         poisonDamage = 0;
+        ballDurability = -1;
+    }
+
+    public BallClass(TurretClass enemyStats)
+    {
+        damage = enemyStats.damageDealt;
+        speed = 1;
+        size = 0.2f;
+        poisonDamage = 0;
+        ballDurability = 1;
     }
 }

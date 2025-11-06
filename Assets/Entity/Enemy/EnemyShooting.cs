@@ -24,8 +24,34 @@ public class EnemyShooting : MonoBehaviour
 
     public void Shoot(float angleFromEnemy = 0f)
     {
-        GameObject newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 2f, transform.rotation);
+        GameObject newBall;
+        if (GetComponent<TurretMain>())
+        {
+            newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 3f, transform.rotation);
+        }
+        newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 2f, transform.rotation);
         newBall.GetComponent<Rigidbody>().linearVelocity = 1000f * Time.fixedDeltaTime * transform.forward;
-        newBall.GetComponent<BallMain>().ballStats = new BallClass(GetComponent<EnemyStats>().enemyInfo);
+        if (GetComponent<TurretMain>())
+        {
+            for (int i = 0; i < GetComponent<TurretMain>().turretsBalls.Count; i++)
+            {
+                if (GetComponent<TurretMain>().turretsBalls[i] == null)
+                {
+                    GetComponent<TurretMain>().turretsBalls.RemoveAt(i);
+                    i -= 1;
+                }
+                else
+                {
+                    Physics.IgnoreCollision(GetComponent<TurretMain>().turretsBalls[i].GetComponent<Collider>(), newBall.GetComponent<Collider>());
+                }
+            }
+            GetComponent<TurretMain>().turretsBalls.Add(newBall);
+            newBall.GetComponent<BallMain>().ballStats = new BallClass(GetComponent<TurretMain>().turretInfo);
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), newBall.GetComponent<Collider>());
+        }
+        else if (GetComponent<EnemyStats>())
+        {
+            newBall.GetComponent<BallMain>().ballStats = new BallClass(GetComponent<EnemyStats>().enemyInfo);
+        }
     }
 }

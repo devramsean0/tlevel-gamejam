@@ -29,7 +29,10 @@ public class EnemyShooting : MonoBehaviour
         {
             newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 3f, transform.rotation);
         }
-        newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 2f, transform.rotation);
+        else
+        {
+            newBall = Instantiate(ballPrefab, transform.position + Quaternion.Euler(0, angleFromEnemy, 0) * transform.forward * 2f, transform.rotation);
+        }
         newBall.GetComponent<Rigidbody>().linearVelocity = 1000f * Time.fixedDeltaTime * transform.forward;
         if (GetComponent<TurretMain>())
         {

@@ -21,6 +21,9 @@ public class BallMain : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         ballSound = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
+
+        transform.localScale = new Vector3(ballStats.size, ballStats.size, ballStats.size);
+        rb.linearVelocity *= ballStats.speed;
     }
 
     // Update is called once per frame

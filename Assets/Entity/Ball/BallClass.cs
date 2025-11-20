@@ -22,14 +22,14 @@ public class BallClass
     {
         damage = enemyStats.damageDealt;
         speed = 1;
-        size = 1;
+        size = 0.5f;
         poisonDamage = 0;
         ballDurability = -1;
     }
 
     public BallClass(TurretClass enemyStats)
     {
-        damage = enemyStats.damageDealt;
+        damage = enemyStats.damageDealt * 0.25f;
         speed = 1;
         size = 0.2f;
         poisonDamage = 0;

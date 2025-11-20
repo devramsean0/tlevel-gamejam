@@ -64,5 +64,6 @@ public class ListOfUpgrades : MonoBehaviour
 
         transform.GetChild(powerUpOptionIndex).GetChild(0).GetComponent<TextMeshProUGUI>().text = upgrade.upgradeName;
         transform.GetChild(powerUpOptionIndex).GetChild(1).GetComponent<TextMeshProUGUI>().text = upgrade.upgradeDesc;
+
     }
 }

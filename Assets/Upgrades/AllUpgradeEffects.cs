@@ -73,7 +73,10 @@ public class AllUpgradeEffects : MonoBehaviour
 
     void ExtraPaddleUpgrade()
     {
-        player.transform.GetChild(1).GetChild(0).GetComponent<CorePaddles>().NewPaddle();
+        if (player.transform.GetChild(1).GetChild(0).GetComponent<CorePaddles>().paddles.Count < 3)
+        {
+            player.transform.GetChild(1).GetChild(0).GetComponent<CorePaddles>().NewPaddle();
+        }
     }
     
     void BallCloneUpgrade()

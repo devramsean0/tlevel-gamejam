@@ -11,7 +11,21 @@ public class PlayerUpgrades
     public float ballCloneChance;
     public int ballCloneAmount;
 
-    public PlayerUpgrades(float damageMult, float playerSpeedMult, float speedMult, float sizeMult, float poisonMult, int ballCloneChance, int ballCloneAmount)
+    public float healthRegen;
+
+    public PlayerUpgrades()
+    {
+        damageMult = 1;
+        playerSpeedMult = 1;
+        speedMult = 1;
+        sizeMult = 1;
+        poisonMult = 0;
+        ballCloneChance = 0;
+        ballCloneAmount = 0;
+        healthRegen = 0;
+    }
+
+    public PlayerUpgrades(float damageMult, float playerSpeedMult, float speedMult, float sizeMult, float poisonMult, int ballCloneChance, int ballCloneAmount, float healthRegen)
     {
         this.damageMult = damageMult;
         this.playerSpeedMult = playerSpeedMult;
@@ -20,5 +34,6 @@ public class PlayerUpgrades
         this.poisonMult = poisonMult;
         this.ballCloneChance = ballCloneChance;
         this.ballCloneAmount = ballCloneAmount;
+        this.healthRegen = healthRegen;
     }
 }

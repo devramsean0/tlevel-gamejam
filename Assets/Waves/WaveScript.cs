@@ -39,7 +39,7 @@ public class WaveScript : MonoBehaviour
 
     void NewEnemy()
     {
-        int enemyChosen = Random.Range(0, currentWaveNum / 5) % enemyPrefabs.Count;
+        int enemyChosen = Random.Range(0, (currentWaveNum / 4) + 1) % enemyPrefabs.Count;
         GameObject newEnemy = Instantiate(enemyPrefabs[enemyChosen], new Vector3(Random.Range(-20f, 20f), 0f, Random.Range(-20f, 20f)), Quaternion.identity);
 
         //Enemy Stats

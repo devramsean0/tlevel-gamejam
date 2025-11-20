@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        playerUpgrades = new(1, 1, 1, 1, 0, 0, 0);
+        playerUpgrades = new();
     }
 
     // Update is called once per frame
@@ -24,6 +24,11 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("GameOver");
+        }
+        currentHealth += playerUpgrades.healthRegen * Time.deltaTime;
+        if (currentHealth > 100)
+        {
+            currentHealth = 100;
         }
     }
 }

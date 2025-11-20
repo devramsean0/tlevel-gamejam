@@ -13,8 +13,8 @@ public class WaveClass
     {
         maxEnemyStats = new EnemyClass(EnemyType.connected, 1 + ((waveNum ^ 2) / 10), 8f - ((waveNum ^ 2) / 10), 1 + (waveNum ^ 2)/2);
         maxEnemyAtOnce = 5 + waveNum;
-        enemyAmountThisWave = 10 + (waveNum * 2);
-        timeBetweenEnemySpawn = 3f - (waveNum / 30);
+        enemyAmountThisWave = 10 + waveNum;
+        timeBetweenEnemySpawn = 3f - (waveNum / 10);
         if (timeBetweenEnemySpawn < 0.1f)
         {
             timeBetweenEnemySpawn = 0.1f;

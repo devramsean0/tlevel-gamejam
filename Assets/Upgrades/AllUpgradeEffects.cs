@@ -43,6 +43,10 @@ public class AllUpgradeEffects : MonoBehaviour
         {
             BallCloneUpgrade();
         }
+        else if (upgradeName == "Health Regen")
+        {
+            HealthRegenUpgrade();
+        }
         Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("PowerUpOptions");
     }
@@ -83,5 +87,10 @@ public class AllUpgradeEffects : MonoBehaviour
     {
         player.GetComponent<PlayerStats>().playerUpgrades.ballCloneChance += 0.05f;
         player.GetComponent<PlayerStats>().playerUpgrades.ballCloneAmount += 1;
+    }
+
+    void HealthRegenUpgrade()
+    {
+        player.GetComponent<PlayerStats>().playerUpgrades.healthRegen += 0.5f;
     }
 }

@@ -25,7 +25,7 @@ public class WaveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeUntilNextSpawn -= Time.deltaTime;
+        timeUntilNextSpawn -= Time.deltaTime * Time.timeScale;
         if (timeUntilNextSpawn <= 0 && currentEnemiesAlive.Count < currWaveData.maxEnemyAtOnce && enemiesSpawnedThisWave < currWaveData.enemyAmountThisWave)
         {
             NewEnemy();

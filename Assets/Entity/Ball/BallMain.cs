@@ -70,7 +70,9 @@ public class BallMain : MonoBehaviour
             //Cloning balls
             for (int i = 0; i < player.GetComponent<PlayerStats>().playerUpgrades.ballCloneAmount; i++)
             {
-                GameObject newClone = Instantiate(gameObject, transform.position + (collision.transform.right * 0.1f * i), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y + (15 * i), transform.rotation.z)));
+                GameObject newClone = Instantiate(gameObject, transform.position + (0.1f * i * collision.transform.right), Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y + (15 * i), transform.rotation.z)));
+                newClone.GetComponent<BallMain>().ballStats = ballStats;
+                newClone.GetComponent<Rigidbody>().linearVelocity = transform.forward;
             }
         }
     }

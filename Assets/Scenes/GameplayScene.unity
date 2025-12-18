@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09eaa79ac0c87f443adcf5b5b777a7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveScript
-  currentWaveNum: 1
+  currentWaveNum: 8
   enemyPrefabs:
   - {fileID: 4390444790276755005, guid: 1d9d42a0c5733de419ffdf8683645fd1, type: 3}
   - {fileID: 5031071146686366875, guid: 897a5a413aedbc747b8e77d754e9d3cb, type: 3}

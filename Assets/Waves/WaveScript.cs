@@ -17,7 +17,6 @@ public class WaveScript : MonoBehaviour
 
     void Awake()
     {
-        currentWaveNum = 0;
         NewWave();
         timeUntilNextSpawn = 0f;
     }
